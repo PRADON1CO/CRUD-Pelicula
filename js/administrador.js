@@ -61,6 +61,48 @@ function limpiarFormularioPelicula(){
     formularioPelicula.reset()
 }
 
+function cargaInicial(){
+    //verificar si tengo pelis
+    if(peliculas.length > 0){
+        peliculas.map((peli)=> dibujarFila())
+    }
+}
+
+function dibujarFila(){
+    const tbody = document.querySelector('#tablaPelicula')
+    tbody.innerHTML += `<tr>
+    <th scope="row">1</th>
+    <td>Guardianes de la galaxia Vol.3</td>
+    <td class="col-descripcion">
+      Po, quien se convertirá en el Maestro Espiritual del Valle de
+      la Paz, busca a su sucesor como el nuevo Guerrero Dragón
+      mientras lucha contra una nueva enemiga llamada "La Camaleona"
+    </td>
+    <td>
+      <img
+        class="img-thumbnail rounded img-fluid thumbnail"
+        src="../img/Guardianes de la Galaxia Volumen 3.jpg"
+      />
+    </td>
+    <td>Aventura</td>
+    <td>
+      <button
+        class="btn btn-warning m-1"
+        onclick=""
+      >
+        <i class="bi bi-pencil-square fs-4"></i>
+      </button>
+      <button
+        class="btn btn-danger m-1"
+        onclick=""
+      >
+        <i class="bi bi-x-square fs-4"></i>
+      </button>
+    </td>
+  </tr>`
+}
+
 //logicas
 btnAgregarPelicula.addEventListener('click', mostrarModalPelicula);
 formularioPelicula.addEventListener('submit', administrarFormularioPelicula);
+cargaInicial();
