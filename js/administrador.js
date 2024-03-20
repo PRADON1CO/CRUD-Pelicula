@@ -1,5 +1,5 @@
-import { Pelicula, prueba } from "./classPelicula.js";
-console.log(prueba)
+import Pelicula from "./classPelicula.js";
+
 //Variables globales
 const btnAgregarPelicula = document.getElementById('btnCrearPelicula');
 const modalPelicula = new bootstrap.Modal(document.getElementById('modalPelicula'));
@@ -28,6 +28,8 @@ function creandoPelicula(){
     console.log('aqui tengo que crear una peli');
     //todo: validar los datos
     //crear un objeto Pelicula
+    const peliculaNueva = new Pelicula('Al filo de la mañana','tipo que vive en un bucle','https://pics.filmaffinity.com/edge_of_tomorrow-632023834-large.jpg', 'Acción', 2014, 73, 'EEUU', 'Tom Cruise', 'Doug Liman')
+    console.log(peliculaNueva)
     //almacenar el objeto en un array de peliculas
     //guardar el array en localstorage
 
