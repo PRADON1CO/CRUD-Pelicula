@@ -5,7 +5,17 @@ const btnAgregarPelicula = document.getElementById('btnCrearPelicula');
 const modalPelicula = new bootstrap.Modal(document.getElementById('modalPelicula'));
 let crearPelicula = true;
 const formularioPelicula = document.getElementById('formPelicula');
-
+const codigo = document.getElementById('codigo');
+const titulo = document.getElementById('titulo');
+const descripcion = document.getElementById('descripcion');
+const anio = document.getElementById('anio');
+const reparto = document.getElementById('reparto');
+const director = document.getElementById('director');
+const imagen = document.getElementById('imagen');
+const genero = document.getElementById('genero');
+const duracion = document.getElementById('duracion');
+const pais = document.getElementById('pais');
+const peliculas = [];
 
 //funciones
 function mostrarModalPelicula(){
@@ -28,9 +38,11 @@ function creandoPelicula(){
     console.log('aqui tengo que crear una peli');
     //todo: validar los datos
     //crear un objeto Pelicula
-    const peliculaNueva = new Pelicula('Al filo de la mañana','tipo que vive en un bucle','https://pics.filmaffinity.com/edge_of_tomorrow-632023834-large.jpg', 'Acción', 2014, 73, 'EEUU', 'Tom Cruise', 'Doug Liman')
+    const peliculaNueva = new Pelicula(titulo.value, descripcion.value, imagen.value, genero.value, anio.value, duracion.value, pais.value, reparto.value, director.value)
     console.log(peliculaNueva)
     //almacenar el objeto en un array de peliculas
+    peliculas.push(peliculaNueva);
+    console.log(peliculas);
     //guardar el array en localstorage
 
 }
