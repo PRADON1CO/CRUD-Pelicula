@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex-grow: 1;
+}
+
+.fondoBlanco{
+    background: white;
+}
+
+.thumbnail{
+    max-width: 100px;
+}
+
+.col-descripcion {
+    width: 30%; /* Ancho personalizado */
+}
