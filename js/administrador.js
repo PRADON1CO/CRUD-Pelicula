@@ -1,2 +1,15 @@
+//Variables globales
 const btnAgregarPelicula = document.getElementById('btnCrearPelicula');
-console.log(btnAgregarPelicula);
+const modalPelicula = new bootstrap.Modal(document.getElementById('modalPelicula'));
+
+
+
+//funciones
+function mostrarModalPelicula(){
+    modalPelicula.show();
+}
+
+
+
+//logicas
+btnAgregarPelicula.addEventListener('click', mostrarModalPelicula)
