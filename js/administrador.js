@@ -15,7 +15,11 @@ const imagen = document.getElementById('imagen');
 const genero = document.getElementById('genero');
 const duracion = document.getElementById('duracion');
 const pais = document.getElementById('pais');
-const peliculas = [];
+const peliculas = JSON.parse(localStorage.getItem('listaPeliculasKey')) || []
+
+
+console.log(localStorage.getItem('listaPeliculasKey'));
+console.log(peliculas);
 
 //funciones
 function mostrarModalPelicula(){
@@ -45,6 +49,7 @@ function creandoPelicula(){
     console.log(peliculas);
     //guardar el array en localstorage
     guardarLocalStorage();
+    limpiarFormularioPelicula();
 
 }
 
@@ -52,6 +57,9 @@ function guardarLocalStorage(){
     localStorage.setItem('listaPeliculasKey', JSON.stringify(peliculas));
 }
 
+function limpiarFormularioPelicula(){
+    formularioPelicula.reset()
+}
 
 //logicas
 btnAgregarPelicula.addEventListener('click', mostrarModalPelicula);
