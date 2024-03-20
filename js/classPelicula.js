@@ -102,6 +102,22 @@ export class Pelicula {
     set director (director){
         this.#director = director;
     }
+
+    //metodo utilizado
+    toJSON(){
+        return{
+            id: this.id,
+            titulo : this.titulo,
+            descripcion : this.descripcion,
+            imagen : this.imagen,
+            genero : this.genero,
+            anio:this.anio,
+            duracion : this.duracion,
+            pais : this.pais,
+            reparto : this.reparto,
+            director : this.director
+        }
+    }
 }
 
 export default Pelicula

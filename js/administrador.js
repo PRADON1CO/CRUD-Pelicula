@@ -44,7 +44,12 @@ function creandoPelicula(){
     peliculas.push(peliculaNueva);
     console.log(peliculas);
     //guardar el array en localstorage
+    guardarLocalStorage();
 
+}
+
+function guardarLocalStorage(){
+    localStorage.setItem('listaPeliculasKey', JSON.stringify(peliculas));
 }
 
 
