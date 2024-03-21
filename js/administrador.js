@@ -50,6 +50,8 @@ function creandoPelicula(){
     //guardar el array en localstorage
     guardarLocalStorage();
     limpiarFormularioPelicula();
+    //dibujar la nueva peli en la tabla
+    dibujarFila(peliculaNueva);
 
 }
 
@@ -64,27 +66,27 @@ function limpiarFormularioPelicula(){
 function cargaInicial(){
     //verificar si tengo pelis
     if(peliculas.length > 0){
-        peliculas.map((peli)=> dibujarFila())
+        peliculas.map((pelicula)=> dibujarFila(pelicula))
     }
 }
 
-function dibujarFila(){
+function dibujarFila(pelicula){
+    console.log(pelicula)
     const tbody = document.querySelector('#tablaPelicula')
     tbody.innerHTML += `<tr>
-    <th scope="row">1</th>
-    <td>Guardianes de la galaxia Vol.3</td>
+    <th scope="row">${pelicula.id}</th>
+    <td>${pelicula.titulo}</td>
     <td class="col-descripcion">
-      Po, quien se convertirá en el Maestro Espiritual del Valle de
-      la Paz, busca a su sucesor como el nuevo Guerrero Dragón
-      mientras lucha contra una nueva enemiga llamada "La Camaleona"
+      ${pelicula.descripcion}
     </td>
     <td>
       <img
         class="img-thumbnail rounded img-fluid thumbnail"
-        src="../img/Guardianes de la Galaxia Volumen 3.jpg"
+        src=${pelicula.imagen}
+        alt=${pelicula.titulo}
       />
     </td>
-    <td>Aventura</td>
+    <td>${pelicula.genero}</td>
     <td>
       <button
         class="btn btn-warning m-1"
