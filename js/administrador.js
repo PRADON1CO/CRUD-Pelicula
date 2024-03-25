@@ -121,6 +121,8 @@ window.borrarPelicula = (idPelicula) => {
   //actualizar el localStorage
   guardarLocalStorage();
   //actualizar la tabla
+  const tbody = document.querySelector('#tablaPelicula')
+  tbody.removeChild(tbody.children[posicionPeli])
   
 }
 
