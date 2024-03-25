@@ -1,6 +1,3 @@
-import Pelicula from "./classPelicula.js";
-
-
 const peliculasJSON = localStorage.getItem('listaPeliculasKey');
 const peliculas = JSON.parse(peliculasJSON);
 
