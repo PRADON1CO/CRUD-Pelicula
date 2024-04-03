@@ -1,10 +1,9 @@
 import Pelicula from "./classPelicula.js";
+import {cantidadCaracteres,validarAnioCreacion, validarCaracteresNoObligatorio, validarGenero, validarMinutosPelicula, validarURLImagen } from"../js/helpers/validaciones.js";
 
 //Variables globales
 const btnAgregarPelicula = document.getElementById("btnCrearPelicula");
-const modalPelicula = new bootstrap.Modal(
-  document.getElementById("modalPelicula")
-);
+const modalPelicula = new bootstrap.Modal(document.getElementById("modalPelicula"));
 let crearPelicula = true;
 const formularioPelicula = document.getElementById("formPelicula");
 const codigo = document.getElementById("codigo");
@@ -21,6 +20,11 @@ const peliculas = JSON.parse(localStorage.getItem("listaPeliculasKey")) || [];
 
 console.log(localStorage.getItem("listaPeliculasKey"));
 console.log(peliculas);
+
+const userAdmin={
+  email: 'admin@admin',
+  password: '1Ss2312'
+}
 
 //funciones
 function mostrarModalPelicula() {
@@ -44,7 +48,9 @@ function administrarFormularioPelicula(e) {
 function creandoPelicula() {
   console.log("aqui tengo que crear una peli");
   //todo: validar los datos
-  //crear un objeto Pelicula
+  if(cantidadCaracteres(titulo, 2, 60) && cantidadCaracteres(descripcion, 2,300) && validarURLImagen(imagen) && validarGenero(genero) && cantidadCaracteres(director, 2,200) &&
+  validarAnioCreacion(anio) && validarMinutosPelicula(duracion) && validarCaracteresNoObligatorio(pais,2,20) && validarCaracteresNoObligatorio(reparto,2,200)){
+     //crear un objeto Pelicula
   const peliculaNueva = new Pelicula(
     titulo.value,
     descripcion.value,
@@ -71,6 +77,9 @@ function creandoPelicula() {
     text: `La pelicula "${peliculaNueva.titulo}" fue crada correctamente`,
     icon: "success",
   });
+  }else{
+    
+  }
   //modalPelicula.hide()
 }
 
@@ -80,6 +89,7 @@ function guardarLocalStorage() {
 
 function limpiarFormularioPelicula() {
   formularioPelicula.reset();
+  //limpiar las clases de titulo y textrea
 }
 
 function cargaInicial() {

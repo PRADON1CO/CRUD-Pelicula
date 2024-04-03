@@ -124,18 +124,24 @@
                 minlength="2"
                 required
               />
+              <div class="invalid-feedback">
+                El titulo es invalido y debe tener entre 2 y 60 caracteres.
+              </div>
             </div>
             <div class="mb-3">
               <label for="descripcion">Descripcion *</label>
               <textarea
                 id="descripcion"
                 rows="4"
-                class="form-control"
+                class="form-control "
                 placeholder="Ej: Po, quien se convertirá en el Maestro Espiritual del Valle de la Paz, busca a su sucesor como el nuevo Guerrero Dragón mientras lucha contra una nueva enemiga llamada 'La Camaleona'."
-                maxlength="200"
+                maxlength="300"
                 minlength="2"
                 required
               ></textarea>
+              <div class="invalid-feedback">
+                La descripcion es invalido y debe tener entre 2 y 200 caracteres.
+              </div>
             </div>
             <div class="mb-3">
               <label for="imagen">Imagen *</label>
@@ -146,7 +152,7 @@
                 placeholder="Ej: http://127.0.0.1:5500/pages/administrador.html"
                 maxlength="120"
                 minlength="2"
-                required
+                
               />
             </div>
             <div class="mb-3">
@@ -182,7 +188,7 @@
                 type="number"
                 class="form-control"
                 placeholder="Ej: 94 min"
-                maxlength="2"
+                maxlength="900"
                 minlength="2"
                 required
               />
@@ -242,15 +248,13 @@
       </div>
     </div>
   </div>
-  </main>
   <footer class="py-3 text-center">
     <p>&copy; Todos los derechos reservados</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script src="../js/administrador.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="../js/administrador.js" type="module"></script>
 </body>
-
 </html>

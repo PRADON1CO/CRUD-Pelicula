@@ -1,4 +1,4 @@
-export class Pelicula {
+class Pelicula {
     #id;
     #titulo;
     #descripcion;
